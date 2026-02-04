@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will you be my Valentine?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 60px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #yes {
+      background: #ff2e63;
+      color: white;
+      margin-right: 15px;
+    }
+
+    #no {
+      background: white;
+      color: #ff2e63;
+      position: absolute;
+    }
+
+    .success {
+      display: none;
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="card">
+    <h1>Uanita 💖</h1>
+    <p>Nabeel has something important to ask you…</p>
+    <h1>Will you be my Valentine?</h1>
+
+    <div class="buttons">
+      <button id="yes" onclick="sayYes()">Yes ❤️</button>
+      <button id="no" onmouseover="moveNo()">No 💔</button>
+    </div>
+
+    <div class="success" id="success">
+      💕 Yay! You just made my day, Uanita 💕
+    </div>
+  </div>
+
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    function sayYes() {
+      document.querySelector(".buttons").style.display = "none";
+      document.getElementById("success").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
